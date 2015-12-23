@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<SettingsCache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PreferedVideoDeviceName>Logitech QuickCam Express</PreferedVideoDeviceName>
+  <PreferedAudioDeviceName>SigmaTel Audio</PreferedAudioDeviceName>
+  <BitRate>256</BitRate>
+  <FrameRate>30</FrameRate>
+  <VideoSize>
+    <Width>320</Width>
+    <Height>240</Height>
+  </VideoSize>
+  <LastAccess>2010-02-28T17:45:18.46875-06:00</LastAccess>
+</SettingsCache>

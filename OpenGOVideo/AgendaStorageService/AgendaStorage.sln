@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaStorage", "AgendaStorage\AgendaStorage.csproj", "{C15EA7C1-A24F-4DEC-B695-A475E13CABC0}"
+EndProject
+Global
+	GlobalSection(VaultVsipSolution-v2) = preSolution
+		VaultHost = http://192.168.1.96/VaultService
+		VaultRepositoryID = 5
+		VaultRepositoryGUID = 65eda5f1-873e-4174-b9cb-a4b9a3773884
+		ProjectCount = 1
+		ProjectRelativeDiskPath1 = AgendaStorage\AgendaStorage.csproj
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C15EA7C1-A24F-4DEC-B695-A475E13CABC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15EA7C1-A24F-4DEC-B695-A475E13CABC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15EA7C1-A24F-4DEC-B695-A475E13CABC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15EA7C1-A24F-4DEC-B695-A475E13CABC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

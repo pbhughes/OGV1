@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OpenGOVideo.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Audio" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Default_Audio_Device</Value>
+    </Setting>
+    <Setting Name="Video" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Default_Video_Device</Value>
+    </Setting>
+    <Setting Name="Removestream" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Timebcolor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Blue</Value>
+    </Setting>
+    <Setting Name="TimeFcolor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="File" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Stream" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="State" Type="System.String" Scope="User">
+      <Value Profile="(Default)">RI</Value>
+    </Setting>
+    <Setting Name="Town" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Saunderstown</Value>
+    </Setting>
+    <Setting Name="Streamserver" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://higgles.mytestserver.com/joetest</Value>
+    </Setting>
+    <Setting Name="Remove" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PubTemplate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Default_State_Town_Organization</Value>
+    </Setting>
+    <Setting Name="Department" Type="System.String" Scope="User">
+      <Value Profile="(Default)">City Council</Value>
+    </Setting>
+    <Setting Name="VideoLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Agendalocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="StreamUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)">joe1</Value>
+    </Setting>
+    <Setting Name="StreamPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">password</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

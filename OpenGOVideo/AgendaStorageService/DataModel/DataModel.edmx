@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Data.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2000" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="DataModelStoreContainer">
+          <EntitySet Name="Agenda" EntityType="Data.Model.Store.Agenda" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AgendaDetails" EntityType="Data.Model.Store.AgendaDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Client" EntityType="Data.Model.Store.Client" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vFullAgenda" EntityType="Data.Model.Store.vFullAgenda" store:Type="Views" store:Schema="barkely" store:Name="vFullAgenda">
+            <DefiningQuery>SELECT 
+      [vFullAgenda].[ClientID] AS [ClientID], 
+      [vFullAgenda].[AgendaID] AS [AgendaID], 
+      [vFullAgenda].[MeetingDate] AS [MeetingDate], 
+      [vFullAgenda].[MeetingTime] AS [MeetingTime], 
+      [vFullAgenda].[ItemID] AS [ItemID], 
+      [vFullAgenda].[ParentItemID] AS [ParentItemID], 
+      [vFullAgenda].[Title] AS [Title], 
+      [vFullAgenda].[Description] AS [Description], 
+      [vFullAgenda].[ItemFrame] AS [ItemFrame], 
+      [vFullAgenda].[ItemPosition] AS [ItemPosition], 
+      [vFullAgenda].[Notes] AS [Notes], 
+      [vFullAgenda].[DateSent] AS [DateSent], 
+      [vFullAgenda].[DateReceived] AS [DateReceived], 
+      [vFullAgenda].[DateCreated] AS [DateCreated], 
+      [vFullAgenda].[DateModified] AS [DateModified], 
+      [vFullAgenda].[IsActive] AS [IsActive]
+      FROM [barkely].[vFullAgenda] AS [vFullAgenda]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="Agenda">
+          <Key>
+            <PropertyRef Name="ClientID" />
+            <PropertyRef Name="AgendaID" />
+          </Key>
+          <Property Name="ClientID" Type="int" Nullable="false" />
+          <Property Name="AgendaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MeetingDate" Type="smalldatetime" />
+          <Property Name="MeetingTime" Type="datetime" />
+          <Property Name="DateSent" Type="datetime" />
+          <Property Name="DateReceived" Type="datetime" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="DateModified" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="AgendaDetails">
+          <Key>
+            <PropertyRef Name="AgendaID" />
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="AgendaID" Type="int" Nullable="false" />
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentItemID" Type="int" Nullable="false" />
+          <Property Name="ItemFrame" Type="int" />
+          <Property Name="ItemPosition" Type="real" />
+          <Property Name="Notes" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="ClientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="State" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Board" Type="varchar" MaxLength="50" />
+          <Property Name="ClientName" Type="varchar" MaxLength="50" />
+          <Property Name="ContactName" Type="varchar" MaxLength="50" />
+          <Property Name="ContactTitle" Type="varchar" MaxLength="50" />
+          <Property Name="ContactEmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="ContactPhone01" Type="varchar" MaxLength="14" />
+          <Property Name="ContactPhone01X" Type="varchar" MaxLength="10" />
+          <Property Name="ContactPhone02" Type="varchar" MaxLength="50" />
+          <Property Name="ContactPhone02x" Type="varchar" MaxLength="10" />
+          <Property Name="ClientWebSite" Type="varchar" MaxLength="50" />
+          <Property Name="PublishingPointAddress" Type="varchar" MaxLength="50" />
+          <Property Name="StreamUserName" Type="varchar" MaxLength="25" />
+          <Property Name="StreamPassword" Type="varchar" MaxLength="25" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="DateAdded" Type="datetime" />
+          <Property Name="ExpirationDate" Type="smalldatetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'OpenGOVideo.barkely.vFullAgenda' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vFullAgenda">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="ClientID" Type="int" Nullable="false" />
+          <Property Name="AgendaID" Type="int" />
+          <Property Name="MeetingDate" Type="smalldatetime" />
+          <Property Name="MeetingTime" Type="datetime" />
+          <Property Name="ItemID" Type="int" />
+          <Property Name="ParentItemID" Type="int" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="ItemFrame" Type="int" />
+          <Property Name="ItemPosition" Type="real" />
+          <Property Name="Notes" Type="varchar" MaxLength="100" />
+          <Property Name="DateSent" Type="datetime" />
+          <Property Name="DateReceived" Type="datetime" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="DateModified" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <Function Name="csp_GetAgendaFiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="barkely">
+          <Parameter Name="State" Type="char" Mode="In" />
+          <Parameter Name="City" Type="varchar" Mode="In" />
+          <Parameter Name="Board" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Data.Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="OpenGOVideoEntities">
+          <EntitySet Name="Agenda" EntityType="Data.Model.Agenda" />
+          <EntitySet Name="AgendaDetails" EntityType="Data.Model.AgendaDetails" />
+          <EntitySet Name="Client" EntityType="Data.Model.Client" />
+          <EntitySet Name="vFullAgenda" EntityType="Data.Model.vFullAgenda" /></EntityContainer>
+        <EntityType Name="Agenda">
+          <Key>
+            <PropertyRef Name="ClientID" />
+            <PropertyRef Name="AgendaID" />
+          </Key>
+          <Property Name="ClientID" Type="Int32" Nullable="false" />
+          <Property Name="AgendaID" Type="Int32" Nullable="false" />
+          <Property Name="MeetingDate" Type="DateTime" />
+          <Property Name="MeetingTime" Type="DateTime" />
+          <Property Name="DateSent" Type="DateTime" />
+          <Property Name="DateReceived" Type="DateTime" />
+          <Property Name="DateCreated" Type="DateTime" />
+          <Property Name="DateModified" Type="DateTime" />
+          <Property Name="IsActive" Type="Boolean" />
+          </EntityType>
+        <EntityType Name="AgendaDetails">
+          <Key>
+            <PropertyRef Name="AgendaID" />
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="AgendaID" Type="Int32" Nullable="false" />
+          <Property Name="ItemID" Type="Int32" Nullable="false" />
+          <Property Name="ParentItemID" Type="Int32" Nullable="false" />
+          <Property Name="ItemFrame" Type="Int32" />
+          <Property Name="ItemPosition" Type="Single" />
+          <Property Name="Notes" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="ClientID" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Board" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ClientName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ContactName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ContactTitle" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ContactEmailAddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ContactPhone01" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="ContactPhone01X" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ContactPhone02" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ContactPhone02x" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ClientWebSite" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PublishingPointAddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StreamUserName" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="StreamPassword" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="DateAdded" Type="DateTime" />
+          <Property Name="ExpirationDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="vFullAgenda">
+          <Key>
+            <PropertyRef Name="ClientID" /></Key>
+          <Property Name="ClientID" Type="Int32" Nullable="false" />
+          <Property Name="AgendaID" Type="Int32" Nullable="true" />
+          <Property Name="MeetingDate" Type="DateTime" Nullable="true" />
+          <Property Name="MeetingTime" Type="DateTime" Nullable="true" />
+          <Property Name="ItemID" Type="Int32" Nullable="true" />
+          <Property Name="ParentItemID" Type="Int32" Nullable="true" />
+          <Property Name="Title" Type="String" Nullable="true" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <Property Name="ItemFrame" Type="Int32" Nullable="true" />
+          <Property Name="ItemPosition" Type="Single" Nullable="true" />
+          <Property Name="Notes" Type="String" Nullable="true" />
+          <Property Name="DateSent" Type="DateTime" Nullable="true" />
+          <Property Name="DateReceived" Type="DateTime" Nullable="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="true" />
+          <Property Name="DateModified" Type="DateTime" Nullable="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="true" /></EntityType></Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="OpenGOVideoEntities">
+          <EntitySetMapping Name="Agenda">
+            <EntityTypeMapping TypeName="IsTypeOf(Data.Model.Agenda)">
+              <MappingFragment StoreEntitySet="Agenda">
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="AgendaID" ColumnName="AgendaID" />
+                <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+                <ScalarProperty Name="MeetingTime" ColumnName="MeetingTime" />
+                <ScalarProperty Name="DateSent" ColumnName="DateSent" />
+                <ScalarProperty Name="DateReceived" ColumnName="DateReceived" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgendaDetails">
+            <EntityTypeMapping TypeName="IsTypeOf(Data.Model.AgendaDetails)">
+              <MappingFragment StoreEntitySet="AgendaDetails">
+                <ScalarProperty Name="AgendaID" ColumnName="AgendaID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ParentItemID" ColumnName="ParentItemID" />
+                <ScalarProperty Name="ItemFrame" ColumnName="ItemFrame" />
+                <ScalarProperty Name="ItemPosition" ColumnName="ItemPosition" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="IsTypeOf(Data.Model.Client)">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Board" ColumnName="Board" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+                <ScalarProperty Name="ContactEmailAddress" ColumnName="ContactEmailAddress" />
+                <ScalarProperty Name="ContactPhone01" ColumnName="ContactPhone01" />
+                <ScalarProperty Name="ContactPhone01X" ColumnName="ContactPhone01X" />
+                <ScalarProperty Name="ContactPhone02" ColumnName="ContactPhone02" />
+                <ScalarProperty Name="ContactPhone02x" ColumnName="ContactPhone02x" />
+                <ScalarProperty Name="ClientWebSite" ColumnName="ClientWebSite" />
+                <ScalarProperty Name="PublishingPointAddress" ColumnName="PublishingPointAddress" />
+                <ScalarProperty Name="StreamUserName" ColumnName="StreamUserName" />
+                <ScalarProperty Name="StreamPassword" ColumnName="StreamPassword" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vFullAgenda">
+            <EntityTypeMapping TypeName="IsTypeOf(Data.Model.vFullAgenda)">
+              <MappingFragment StoreEntitySet="vFullAgenda">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateReceived" ColumnName="DateReceived" />
+                <ScalarProperty Name="DateSent" ColumnName="DateSent" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ItemPosition" ColumnName="ItemPosition" />
+                <ScalarProperty Name="ItemFrame" ColumnName="ItemFrame" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ParentItemID" ColumnName="ParentItemID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="MeetingTime" ColumnName="MeetingTime" />
+                <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+                <ScalarProperty Name="AgendaID" ColumnName="AgendaID" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" /></MappingFragment></EntityTypeMapping></EntitySetMapping></EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="DataModel">
+        <EntityTypeShape EntityType="Data.Model.Agenda" Width="1.5" PointX="0.75" PointY="0.75" Height="2.41404296875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data.Model.AgendaDetails" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9210009765625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data.Model.Client" Width="1.5" PointX="2.75" PointY="3.75" Height="4.0575162760416656" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data.Model.vFullAgenda" Width="1.5" PointX="5.375" PointY="0.75" Height="3.5644742838541665" /></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

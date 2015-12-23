@@ -1,0 +1,43 @@
+﻿<organizations>
+
+  <org>
+    <name>SK Town Council</name>
+    <state>RI</state>
+    <city>Test City</city>
+    <board>Town Council</board>
+    <filelocation>c:\OpenGovideo</filelocation>
+    <offset>2</offset>
+    <livestream>
+      <publishpoint>http://higgles.mytestserver.com/</publishpoint>
+      <username>joe1</username>
+      <password>password</password>
+    </livestream>
+    <ftpserver>
+      <host>ftp.coreyware.com</host>
+      <dir>/test</dir>
+      <username>barkley</username>
+      <password>mep-005a</password>
+    </ftpserver>
+  </org>
+
+  
+  <org>
+    <name>Building Permits</name>
+    <state>RI</state>
+    <city>Test City</city>
+    <board>Town Council</board>
+    <filelocation>c:\OpenGovideo</filelocation>
+    <offset>2</offset>
+    <livestream>
+      <publishpoint>http://higgles.mytestserver.com/</publishpoint>
+      <username>joe1</username>
+      <password>password</password>
+    </livestream>
+    <ftpserver>
+      <host>ftp.coreyware.com</host>
+      <dir>/test</dir>
+      <username>barkley</username>
+      <password>mep-005a</password>
+    </ftpserver>
+  </org>
+</organizations>

@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1570706-31D1-44D7-B583-D010CD2FA023}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenGOVideo</RootNamespace>
+    <AssemblyName>OpenGOVideo</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>0574277331AF394064701A0EBE193697EC281CDE</ManifestCertificateThumbprint>
+    <ManifestKeyFile>OpenGOVideo_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>OpenGOV.ico</ApplicationIcon>
+    <PublishUrl>C:\Users\Colin\Documents\My Dropbox\Projects\OpenGOVideo\Deploy\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <Optimize>false</Optimize>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v9.1, Version=9.1.20091.2023, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v9.1, Version=9.1.20091.2023, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WINDOWS\assembly\GAC_MSIL\Infragistics2.Win.UltraWinDataSource.v9.1\9.1.20091.2023__7dd5c3163f2cd0cb\Infragistics2.Win.UltraWinDataSource.v9.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v9.1, Version=9.1.20091.2023, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.v9.1, Version=9.1.20091.2023, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Interop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Expression.Encoder.Utilities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.IO.Log">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddItem.Designer.cs">
+      <DependentUpon>AddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdvancedDeviceConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvancedDeviceConfig.Designer.cs">
+      <DependentUpon>AdvancedDeviceConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgendaItem.cs" />
+    <Compile Include="CacheManager.cs" />
+    <Compile Include="Codecs.cs" />
+    <Compile Include="EditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditItem.Designer.cs">
+      <DependentUpon>EditItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditTimestamps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTimestamps.designer.cs">
+      <DependentUpon>EditTimestamps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="FrameRate.cs" />
+    <Compile Include="frmAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlert.Designer.cs">
+      <DependentUpon>frmAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAutoPublish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAutoPublish.Designer.cs">
+      <DependentUpon>frmAutoPublish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGetAgendaFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGetAgendaFile.Designer.cs">
+      <DependentUpon>frmGetAgendaFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWait.Designer.cs">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="LoadingSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingSplash.Designer.cs">
+      <DependentUpon>LoadingSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_MenuEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meeting.cs" />
+    <Compile Include="Organization.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddItem.resx">
+      <DependentUpon>AddItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvancedDeviceConfig.resx">
+      <DependentUpon>AdvancedDeviceConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditItem.resx">
+      <DependentUpon>EditItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTimestamps.resx">
+      <DependentUpon>EditTimestamps.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlert.resx">
+      <DependentUpon>frmAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAutoPublish.resx">
+      <DependentUpon>frmAutoPublish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGetAgendaFile.resx">
+      <DependentUpon>frmGetAgendaFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWait.resx">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingSplash.resx">
+      <DependentUpon>LoadingSplash.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publish.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Publish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectOrganization.resx">
+      <DependentUpon>frmSelectOrganization.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="OpenGOVideo_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Publish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publish.designer.cs">
+      <DependentUpon>Publish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecordingStatus.cs" />
+    <Compile Include="frmSelectOrganization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectOrganization.Designer.cs">
+      <DependentUpon>frmSelectOrganization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\StorageService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsCache.cs" />
+    <Compile Include="Timestamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OpenGOV.ico" />
+    <Content Include="boards.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\230-rect_blue.GIF" />
+    <Content Include="Resources\Icon1.ico" />
+    <Content Include="Resources\Image1.bmp" />
+    <Content Include="Resources\Logo.ico" />
+    <Content Include="Resources\Logo32.bmp" />
+    <Content Include="Resources\map.png" />
+    <Content Include="Resources\MicrophoneDisabled.png" />
+    <Content Include="Resources\MicrophoneDisabled1.png" />
+    <Content Include="Resources\MicrophoneHot.png" />
+    <Content Include="Resources\MicrophoneHot1.png" />
+    <Content Include="Resources\MicrophoneNormal.png" />
+    <Content Include="Resources\MicrophoneNormal1.png" />
+    <Content Include="Resources\MicrophonePressed.png" />
+    <Content Include="Resources\MicrophonePressed1.png" />
+    <Content Include="Resources\openGOVCapital32.gif" />
+    <Content Include="Resources\openGOVCapital64.gif" />
+    <Content Include="Resources\openGOVideo.png" />
+    <Content Include="Resources\openGOVideo100.png" />
+    <Content Include="Resources\openGOVideo200.png" />
+    <None Include="Resources\openHS.png" />
+    <Content Include="Resources\PauseDisabled.png" />
+    <Content Include="Resources\PauseDisabled1.png" />
+    <Content Include="Resources\PauseHot.png" />
+    <Content Include="Resources\PauseHot1.png" />
+    <Content Include="Resources\PauseNormal.png" />
+    <Content Include="Resources\PauseNormal1.png" />
+    <Content Include="Resources\PauseNormalRed.png" />
+    <Content Include="Resources\PauseNormalRed1.png" />
+    <Content Include="Resources\PausePressed.png" />
+    <Content Include="Resources\PausePressed1.png" />
+    <Content Include="Resources\Play1Disabled.png" />
+    <Content Include="Resources\Play1Disabled1.png" />
+    <Content Include="Resources\Play1Hot.png" />
+    <Content Include="Resources\Play1Hot1.png" />
+    <None Include="Resources\Play1Hot11.png" />
+    <Content Include="Resources\Play1Normal.png" />
+    <Content Include="Resources\Play1Normal1.png" />
+    <Content Include="Resources\Play1Pressed.png" />
+    <Content Include="Resources\Play1Pressed1.png" />
+    <Content Include="Resources\RecordDisabled.png" />
+    <Content Include="Resources\RecordDisabled1.png" />
+    <Content Include="Resources\RecordHot.png" />
+    <Content Include="Resources\RecordHot1.png" />
+    <Content Include="Resources\RecordNormal.png" />
+    <Content Include="Resources\RecordNormal1.png" />
+    <Content Include="Resources\RecordNormalRed.png" />
+    <Content Include="Resources\RecordNormalRed1.png" />
+    <Content Include="Resources\RecordPressed.png" />
+    <Content Include="Resources\RecordPressed1.png" />
+    <None Include="Resources\splash-logo.png" />
+    <None Include="Resources\ReportServerBlue.gif" />
+    <Content Include="Resources\StepForwardDisabled.png" />
+    <Content Include="Resources\StepForwardHot.png" />
+    <Content Include="Resources\StepForwardNormal.png" />
+    <Content Include="Resources\StepForwardNormalBlue.png" />
+    <Content Include="Resources\StepForwardNormalOrange.png" />
+    <Content Include="Resources\StepForwardNormalRed.png" />
+    <Content Include="Resources\StepForwardNormalYellow.png" />
+    <Content Include="Resources\StepForwardPressed.png" />
+    <Content Include="Resources\StepForwardPressedBlue.png" />
+    <Content Include="Resources\Stop1Disabled.png" />
+    <Content Include="Resources\Stop1Disabled1.png" />
+    <Content Include="Resources\Stop1Hot.png" />
+    <Content Include="Resources\Stop1Hot1.png" />
+    <Content Include="Resources\Stop1Normal.png" />
+    <Content Include="Resources\Stop1Normal1.png" />
+    <Content Include="Resources\Stop1NormalBlue.png" />
+    <Content Include="Resources\Stop1NormalBlue1.png" />
+    <Content Include="Resources\Stop1NormalOrange.png" />
+    <Content Include="Resources\Stop1NormalOrange1.png" />
+    <Content Include="Resources\Stop1NormalRed.png" />
+    <Content Include="Resources\Stop1NormalRed1.png" />
+    <Content Include="Resources\Stop1NormalYellow.png" />
+    <Content Include="Resources\Stop1NormalYellow1.png" />
+    <Content Include="Resources\Stop1Pressed.png" />
+    <Content Include="Resources\Stop1Pressed1.png" />
+    <Content Include="Resources\Stop1PressedBlue.png" />
+    <Content Include="Resources\Stop1PressedBlue1.png" />
+    <Content Include="Resources\tools.png" />
+    <Content Include="Resources\Untitled - 5.ico" />
+    <Content Include="Resources\VideOpen.jpg" />
+    <Content Include="Resources\VolumeDisabled.png" />
+    <Content Include="Resources\VolumeHot.png" />
+    <Content Include="Resources\VolumeNormal.png" />
+    <Content Include="Resources\VolumeNormalBlue.png" />
+    <Content Include="Resources\VolumeNormalOrange.png" />
+    <Content Include="Resources\VolumeNormalRed.png" />
+    <Content Include="Resources\VolumeNormalYellow.png" />
+    <Content Include="Resources\VolumePressed.png" />
+    <Content Include="Resources\VolumePressedBlue.png" />
+    <None Include="Service References\StorageService\OpenGOVideo.StorageService.AgendaFile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="settings_cache.xml" />
+    <None Include="Service References\StorageService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\StorageService\configuration.svcinfo" />
+    <None Include="Service References\StorageService\configuration91.svcinfo" />
+    <None Include="Service References\StorageService\AgendaServices.disco" />
+    <None Include="Service References\StorageService\AgendaServices.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="FTPclient.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="OpenGOVideo.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\StorageService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FTPClient\FTPclient.vbproj">
+      <Project>{8C7FEF6C-2484-46F3-AEB1-1613E313E22C}</Project>
+      <Name>FTPclient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
